@@ -1,8 +1,9 @@
+
 body {
     margin: 0;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    background-color:white;
-    height: 500px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background-color: white;
+    min-height: 100vh;
 }
 
 header {
@@ -18,24 +19,30 @@ header h1 {
 }
 
 nav {
-    margin-top: 50px;
     background-color: #000;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+}
+
+nav .nav-container {
     max-width: 1200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
 nav a {
     color: white;
-    text-decoration: none; /* Removes underline */
+    text-decoration: none;
     flex: 1;
     text-align: center;
 }
 
 nav a:hover {
-    text-decoration: none; /* Ensures no underline on hover */
+    text-decoration: none;
 }
 
 main {
@@ -43,47 +50,49 @@ main {
     display: flex;
     justify-content: space-between;
     max-width: 1200px;
-    height:auto;
-    /*margin: 20px auto;*/
-    padding: 10px 10px 20px 50px;
+    height: auto;
+    margin: 20px auto;
+    padding: 10px;
 }
 
 .left-column {
-    width: 66%; /* 66% of the total width */
+    width: 66%;
     background-color: #fff;
     color: white;
     margin: 10px;
-    padding:  0px 0px 20px 5px;
+    padding: 0;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
-h2{
+
+h2 {
     background-color: #003087;
     color: #fff;
-    padding: 0;
-    
+    padding: 10px 20px;
+    margin: 0;
+    border-radius: 10px 10px 0 0;
 }
 
 .right-column {
-    width:34%; /* 33% for Web Dev Resources */
+    width: 34%;
     background-color: #fff;
-    /*padding: auto;*/
     margin: 10px;
-    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
 }
-.right-column p{
+
+.right-column p {
     color: black;
     padding: 10px;
 }
 
-.left-column h2, .right-column h2 {
+.left-column h2,
+.right-column h2 {
     margin-top: 0;
 }
 
 .left-column p {
-    margin: 10px 0;
+    margin: 10px 20px;
     color: #000;
 }
 
@@ -91,13 +100,14 @@ h2{
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    flex-direction: row; /* Places image on the right */
+    flex-direction: row;
+    padding: 20px;
 }
 
 .about-me-content p {
     flex: 1;
     color: #000;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .about-me-content img {
@@ -108,20 +118,20 @@ h2{
 
 .flag {
     float: left;
-    background-image:url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Flag_of_Uruguay_%28Rivera%29.svg/330px-Flag_of_Uruguay_%28Rivera%29.svg.png);
-    height: 150px;
+    height: auto;
     width: 150px;
-    margin: 0 10px 10px 0;
+    margin: 0 10px 10px 20px;
     border: 1px solid #000;
 }
 
 .right-column ul {
     list-style-type: none;
     padding: 0;
+    margin: 20px;
 }
 
 .right-column ul li {
-    margin: 10px 0 10px 10px;
+    margin: 10px 0;
 }
 
 .right-column ul li a {
@@ -138,11 +148,62 @@ footer {
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
     width: 100%;
-    bottom: 0;
 }
 
 footer p {
     margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .left-column,
+    .right-column {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .about-me-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-me-content img {
+        margin-bottom: 20px;
+    }
+
+    .flag {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+    }
+
+    nav .nav-container {
+        flex-direction: column;
+    }
+
+    nav a {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
+
+    h2 {
+        font-size: 18px;
+        padding: 10px;
+    }
+
+    .left-column p,
+    .right-column ul {
+        font-size: 14px;
+    }
 }
