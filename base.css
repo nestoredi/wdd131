@@ -60,6 +60,7 @@ main {
     padding: 0;
     border: 1px solid #ccc;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -70,9 +71,10 @@ h2 {
     border-radius: 10px 10px 0 0;
 }
 
-.left-column h2:first-child {
-    width: calc(100% - 40px); /* Adjusts to column width minus padding */
+.left-column h2 {
+    width: calc(100% - 40px); /* Matches column content width minus padding */
     margin: 0 20px; /* Aligns with content padding */
+    box-sizing: border-box; /* Ensures consistent width calculation */
 }
 
 .right-column {
@@ -81,6 +83,7 @@ h2 {
     margin: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .right-column p {
@@ -156,6 +159,7 @@ footer {
     text-align: center;
     padding: 10px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 footer p {
@@ -175,7 +179,7 @@ footer p {
         margin: 10px 0;
     }
 
-    .left-column h2:first-child {
+    .left-column h2 {
         width: calc(100% - 20px); /* Adjust for smaller padding on mobile */
         margin: 0 10px;
     }
