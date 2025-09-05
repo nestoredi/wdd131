@@ -1,227 +1,220 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 body {
-    margin: 0;
-    font-family: "Roboto", sans-serif;
-    background-color: white;
-    min-height: 100vh;
-    font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  background-color: #fff;
+  min-height: 100vh;
+  font-weight: 400;
 }
 
-header {
-    background-color: #003087;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
+/* Typography */
 header h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-nav {
-    background-color: #000;
-    padding: 10px 0;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-
-nav .nav-container {
-    max-width: 1200px;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    flex: 1;
-    text-align: center;
-}
-
-nav a:hover {
-    text-decoration: none;
-}
-
-main {
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    height: auto;
-    margin: 20px auto;
-    padding: 10px;
-}
-
-.left-column {
-    width: 66%;
-    background-color: #fff;
-    margin: 10px;
-    padding: 0;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 h2 {
-    background-color: #003087;
-    color: #fff;
-    padding: 10px 20px;
-    margin: 0;
-    border-radius: 10px 10px 0 0;
-    font-weight: 100;
+  background-color: #003087;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 0;
+  border-radius: 10px 10px 0 0;
+  width: 100%;
+  font-weight: 700;
 }
 
-.left-column h2 {
-    width: calc(100% - 40px); /* Matches column content width minus padding */
-    margin: 0 20px; /* Aligns with content padding */
-    box-sizing: border-box; /* Ensures consistent width calculation */
-}
-
-.right-column {
-    width: 34%;
-    background-color: #fff;
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    box-sizing: border-box;
-}
-
-.right-column p {
-    color: black;
-    padding: 10px;
-}
-
-.left-column h2,
-.right-column h2 {
-    margin-top: 0;
-}
-
+.right-column p,
 .left-column p {
-    margin: 10px 20px;
-    color: #000;
-}
-
-.about-me-content,
-.montevideo-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    flex-direction: row;
-    padding: 20px;
+  color: #000;
+  font-weight: 400;
 }
 
 .about-me-content p,
 .montevideo-content p {
-    flex: 1;
-    color: #000;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+  flex: 1;
+  color: #000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.right-column ul li a {
+  color: #00f;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.right-column ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Layout */
+header {
+  background-color: #003087;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+nav {
+  background-color: #000;
+  padding: 10px 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+nav .nav-container {
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+main {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  height: auto;
+  margin: 20px auto;
+  padding: 10px;
+}
+
+.left-column {
+  width: 66%;
+  background-color: #fff;
+  margin: 10px;
+  padding: 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.right-column {
+  width: 34%;
+  background-color: #fff;
+  margin: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+footer {
+  background-color: #003087;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Components */
+.about-me-content,
+.montevideo-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-direction: row;
+  padding: 20px;
 }
 
 .about-me-content img,
 .montevideo-content img.flag {
-    width: 150px;
-    height: auto;
-    margin: 0;
-    border: 1px solid #000;
+  width: 150px;
+  height: auto;
+  margin: 0;
+  border: 1px solid #000;
 }
 
 .montevideo-content {
-    align-items: flex-start;
+  align-items: flex-start;
 }
 
 .montevideo-content img.flag {
-    margin-left: 20px;
-    margin-top: 20px; /* Ensures flag is below h2 and does not touch blue background */
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
 .right-column ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 20px;
+  list-style-type: none;
+  padding: 0;
+  margin: 20px;
 }
 
 .right-column ul li {
-    margin: 10px 0;
+  margin: 10px 0;
 }
 
-.right-column ul li a {
-    color: blue;
-    text-decoration: none;
+/* States */
+nav a {
+  color: #fff;
+  text-decoration: none;
+  flex: 1;
+  text-align: center;
+  display: inline-block;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
 }
 
-.right-column ul li a:hover {
-    text-decoration: underline;
+nav a:hover {
+  color: #00f;
+  transition: color 0.3s;
 }
 
-footer {
-    background-color: #003087;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-footer p {
-    margin: 0;
-}
-
-/* Responsive design */
+/* Responsive Design */
 @media (max-width: 768px) {
-    main {
-        flex-direction: column;
-        padding: 10px;
-    }
+  main {
+    flex-direction: column;
+    padding: 10px;
+  }
 
-    .left-column,
-    .right-column {
-        width: 100%;
-        margin: 10px 0;
-    }
+  .left-column,
+  .right-column {
+    width: 100%;
+    margin: 10px 0;
+  }
 
-    .left-column h2 {
-        width: calc(100% - 20px); /* Adjust for smaller padding on mobile */
-        margin: 0 10px;
-    }
+  .about-me-content,
+  .montevideo-content {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    .about-me-content,
-    .montevideo-content {
-        flex-direction: column;
-        align-items: center;
-    }
+  .about-me-content img,
+  .montevideo-content img.flag {
+    margin-bottom: 20px;
+  }
 
-    .about-me-content img,
-    .montevideo-content img.flag {
-        margin-bottom: 20px;
-    }
+  .montevideo-content img.flag {
+    margin: 20px auto;
+  }
 
-    .montevideo-content img.flag {
-        margin: 20px auto; /* Center flag on smaller screens */
-    }
+  nav .nav-container {
+    flex-direction: column;
+  }
 
-    nav .nav-container {
-        flex-direction: column;
-    }
-
-    nav a {
-        padding: 10px 0;
-    }
+  nav a {
+    padding: 10px 0;
+  }
 }
 
 @media (max-width: 480px) {
-    header h1 {
-        font-size: 20px;
-    }
+  header h1 {
+    font-size: 20px;
+  }
 
-    h2 {
-        font-size: 18px;
-        padding: 10px;
-    }
+  h2 {
+    font-size: 18px;
+    padding: 10px;
+  }
 
-    .left-column p,
-    .right-column ul {
-        font-size: 14px;
-    }
+  .left-column p,
+  .right-column ul {
+    font-size: 14px;
+  }
 }
