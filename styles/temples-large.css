@@ -1,0 +1,31 @@
+/* Para pantallas mayores a 768px */
+@media (min-width: 768px) {
+    #hamburger-btn {
+        display: none;
+    }
+
+    #main-nav {
+        display: block;
+        width: auto;
+    }
+
+    #main-nav ul {
+        display: flex;
+        margin-top: 0;
+    }
+
+    #main-nav li {
+        margin: 0 0.5rem;
+    }
+    
+    .gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Ajuste para tablets (600px a 900px) */
+@media (min-width: 600px) and (max-width: 900px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
