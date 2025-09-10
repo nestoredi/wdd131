@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="keywords" content="Nestor Crossa, WDD 131/Uruguay">
+    <meta name="author" content="Nestor Crossa">
+    <title>Discover Uruguay</title>
+    <meta name="description" content="Explore the beauty and culture of Uruguay, a country with rich history and stunning landscapes.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/place.css">
+    <script src="scripts/place.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Discover Uruguay</h1>
+    </header>
+    
+    <main>
+        <section class="hero">
+            <picture>
+                <source srcset="images/palacio salvo2" media="(max-width: 600px)">
+                <source srcset="images/palacio salvo.webp" media="(max-width: 1200px)">
+                <img src="images/palacio salbo.jpg" alt="The famous Palacio Salvo">
+            </picture>
+        </section>
+        
+        <section class="data">
+            <h2>Country Data</h2>
+            <div class="data-content">
+                <p><span class="highlight">Population:</span> 3,444,263 inhabitants (2023)</p>
+                <p><span class="highlight">Capital:</span> Montevideo</p>
+                <p><span class="highlight">Languages:</span> Spanish</p>
+                <p><span class="highlight">Currency:</span> Uruguayan Peso (UYU)</p>
+                <p><span class="highlight">Area:</span> 176,215 km²</p>
+                <p><span class="highlight">President:</span> Yamandu Orsi</p>
+            </div>
+        </section>
+        
+        <section class="weather">
+            <h2>Weather <span class="weather-icon">⛅</span></h2>
+            <div class="weather-content">
+                <div class="current-weather">
+                    <img src="images/669958_weather_cloud_forecast_sun_icon.svg" alt="Sunny weather icon" class="mobile-weather-icon">
+                    <p><span class="highlight">Current:</span> <span id="temp">22</span>°C, Sunny</p>
+                    <p><span class="highlight">Wind:</span> <span id="wind-speed">12</span> km/h</p>
+                    <p><span class="highlight">Wind Chill:</span> <span id="wind-chill">N/A</span></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; <span id="current-year"></span> Nestor Crossa | Last Modification: <span id="last-modified"></span></p>
+    </footer>
+</body>
+</html>

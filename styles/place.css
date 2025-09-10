@@ -1,0 +1,167 @@
+/* CSS Variables for Uruguay color scheme (based on flag colors) */
+:root {
+    --color-blue: #003366;
+    --color-white: #FFFFFF;
+    --color-cream: #F5F5DC;
+    --color-text: #333333;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+    --border-radius: 8px;
+}
+
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-cream);
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+
+/* Header styles */
+header {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: var(--spacing-md);
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.8rem;
+}
+
+/* Main content styles */
+main {
+    padding: var(--spacing-md);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Hero section with responsive image */
+.hero {
+    margin-bottom: var(--spacing-lg);
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+}
+
+/* Data section styles */
+.data {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-lg);
+}
+
+.data h2 {
+    color: var(--color-blue);
+    margin-bottom: var(--spacing-md);
+}
+
+.data-content p {
+    margin-bottom: var(--spacing-sm);
+}
+
+.highlight {
+    font-weight: bold;
+}
+
+/* Weather section styles */
+.weather {
+    background-color: var(--color-white);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+}
+
+.weather h2 {
+    color: var(--color-blue);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.weather-icon::after {
+    content: "⛅";
+    display: inline-block;
+}
+
+.mobile-weather-icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.weather-content p {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Footer styles - always in one line */
+footer {
+    background-color: var(--color-blue);
+    color: var(--color-white);
+    padding: var(--spacing-md);
+    text-align: center;
+    margin-top: var(--spacing-lg);
+}
+
+footer p {
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    main {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--spacing-lg);
+        padding: var(--spacing-lg);
+    }
+    
+    .hero {
+        grid-column: 1 / -1;
+    }
+    
+    .mobile-weather-icon {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .weather-icon::after {
+        display: none;
+    }
+    
+    footer p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    footer p {
+        font-size: 0.8rem;
+    }
+}
