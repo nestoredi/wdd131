@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <meta name="keywords" content="Nestor Crossa, WDD 131/Uruguay">
+    <meta name="keywords" content="Nestor Crossa, WDD 131/Uruguay">
     <meta name="author" content="Nestor Crossa">
     <title>Discover Uruguay</title>
     <meta name="description" content="Explore the beauty and culture of Uruguay, a country with rich history and stunning landscapes.">
@@ -21,9 +21,9 @@
     <main>
         <section class="hero">
             <picture>
-                <source srcset="images/palacio salvo2" media="(max-width: 600px)">
-                <source srcset="images/palacio salvo.webp" media="(max-width: 1200px)">
-                <img src="images/palacio salbo.jpg" alt="The famous Palacio Salvo">
+                <source srcset="images/palacio_salvo2.webp" media="(max-width: 600px)">
+                <source srcset="images/palacio_salvo.webp" media="(max-width: 1200px)">
+                <img src="images/palacio_salbo.jpg" alt="The famous Palacio Salvo">
             </picture>
         </section>
         
@@ -55,5 +55,29 @@
     <footer>
         <p>&copy; <span id="current-year"></span> Nestor Crossa | Last Modification: <span id="last-modified"></span></p>
     </footer>
+
+    <script>
+        // Function to calculate wind chill in metric system (Celsius)
+        function calculateWindChill(temp, windSpeed) {
+            // Formula for wind chill in metric system
+            return 13.12 + (0.6215 * temp) - (11.37 * Math.pow(windSpeed, 0.16)) + (0.3965 * temp * Math.pow(windSpeed, 0.16));
+        }
+
+        // Update footer with current year and last modified date
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleString();
+
+        // Calculate and display wind chill
+        const temp = 22; // Static temperature value in Celsius
+        const windSpeed = 12; // Static wind speed value in km/h
+
+        // Check if wind chill calculation is viable (metric conditions)
+        if (temp <= 10 && windSpeed > 4.8) {
+            const windChill = calculateWindChill(temp, windSpeed);
+            document.getElementById('wind-chill').textContent = `${Math.round(windChill)}°C`;
+        } else {
+            document.getElementById('wind-chill').textContent = 'N/A';
+        }
+    </script>
 </body>
 </html>
