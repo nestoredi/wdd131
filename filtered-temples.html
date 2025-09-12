@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Nestor Crossa, WDD 131/Uruguay">
+    <meta name="author" content="Nestor Crossa">
+    <meta name="description" content="Temples SUD albuum">
+    <title>Temple Album with Filtering</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/filtered-temples.css">
+    <script src="scripts/filtered-temples.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>Temple Album</h1>
+            <button id="hamburger-btn" aria-label="Toggle menu">☰</button>
+            <nav id="main-nav">
+                <ul>
+                    <li class="active"><a data-filter="all">Home</a></li>
+                    <li><a data-filter="old">Old</a></li>
+                    <li><a data-filter="new">New</a></li>
+                    <li><a data-filter="large">Large</a></li>
+                    <li><a data-filter="small">Small</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <h2>Beautiful Temples Around the World</h2>
+        <div id="gallery" class="gallery">
+            <!-- Temple cards will be dynamically generated here -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentYear"></span> | Nestor Edison Crossa | Montevideo | Última modificación: <span id="lastModified"></span></p>
+    </footer>
+</body>
+</html>
