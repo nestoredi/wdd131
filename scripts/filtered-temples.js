@@ -126,7 +126,7 @@ function displayTemples(filter = 'all') {
             filteredTemples = temples.filter(temple => temple.area > 90000);
             break;
         case 'small':
-            filteredTemples = temples.filter(temple => temple.area < 10000);
+            filteredTemples = temples.filter(temple => temple.area < 12000);
             break;
         default:
             filteredTemples = temples;
