@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Review Form</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --light-color: #f9f9f9;
+            --dark-color: #333;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        h1 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .required::after {
+            content: " *";
+            color: var(--accent-color);
+        }
+        
+        select, input[type="date"], input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        select:focus, input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+        }
+        
+        .rating-container {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        
+        .rating-container input {
+            display: none;
+        }
+        
+        .rating-container label {
+            font-size: 30px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+            margin-bottom: 0;
+        }
+        
+        .rating-container label:hover,
+        .rating-container label:hover ~ label,
+        .rating-container input:checked ~ label {
+            color: #ffc107;
+        }
+        
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .checkbox-item input {
+            width: auto;
+        }
+        
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 14px 24px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        
+        .submit-btn:hover {
+            background-color: var(--secondary-color);
+        }
+        
+        footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        @media (min-width: 768px) {
+            .form-row {
+                display: flex;
+                gap: 20px;
+            }
+            
+            .form-row .form-group {
+                flex: 1;
+            }
+        }
+        
+        /* Confirmation Page Styles */
+        .confirmation-container {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        .confirmation-icon {
+            font-size: 60px;
+            color: #2ecc71;
+            margin-bottom: 20px;
+        }
+        
+        .review-details {
+            background-color: #f8f9fa;
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin: 30px 0;
+            text-align: left;
+        }
+        
+        .review-detail {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .review-detail:last-child {
+            border-bottom: none;
+        }
+        
+        .review-count {
+            background-color: var(--primary-color);
+            color: white;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            margin-top: 20px;
+        }
+        
+        .back-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .back-btn:hover {
+            background-color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Product Review</h1>
+            <p>Share your experience with our products</p>
+        </header>
+        
+        <form id="reviewForm" method="get" action="review.html">
+            <div class="form-group">
+                <label for="productName" class="required">Product Name</label>
+                <select id="productName" name="productName" required>
+                    <option value="" disabled selected>Select a Product ...</option>
+                    <!-- Product options will be dynamically populated -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label class="required">Overall Rating</label>
+                <div class="rating-container">
+                    <input type="radio" id="rating5" name="rating" value="5" required>
+                    <label for="rating5">☆</label>
+                    
+                    <input type="radio" id="rating4" name="rating" value="4">
+                    <label for="rating4">☆</label>
+                    
+                    <input type="radio" id="rating3" name="rating" value="3">
+                    <label for="rating3">☆</label>
+                    
+                    <input type="radio" id="rating2" name="rating" value="2">
+                    <label for="rating2">☆</label>
+                    
+                    <input type="radio" id="rating1" name="rating" value="1">
+                    <label for="rating1">☆</label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="installDate" class="required">Date of Installation</label>
+                <input type="date" id="installDate" name="installDate" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Useful Features (select all that apply)</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature1" name="usefulFeatures" value="Easy Installation">
+                        <label for="feature1">Easy Installation</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature2" name="usefulFeatures" value="Energy Efficient">
+                        <label for="feature2">Energy Efficient</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature3" name="usefulFeatures" value="Durable">
+                        <label for="feature3">Durable</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature4" name="usefulFeatures" value="Good Value">
+                        <label for="feature4">Good Value</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="feature5" name="usefulFeatures" value="Modern Design">
+                        <label for="feature5">Modern Design</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="writtenReview">Written Review</label>
+                <textarea id="writtenReview" name="writtenReview" placeholder="Tell us more about your experience with this product..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="userName">User Name</label>
+                <input type="text" id="userName" name="userName" placeholder="Optional">
+            </div>
+            
+            <button type="submit" class="submit-btn">Submit Review</button>
+        </form>
+        
+        <footer>
+            <p>&copy; 2023 Product Reviews. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Product data array
+        const products = [
+            {
+                id: "fc-1888",
+                name: "flux capacitor",
+                averagerating: 4.5
+            },
+            {
+                id: "fc-2050",
+                name: "power laces",
+                averagerating: 4.7
+            },
+            {
+                id: "fs-1987",
+                name: "time circuits",
+                averagerating: 3.5
+            },
+            {
+                id: "ac-2000",
+                name: "low voltage reactor",
+                averagerating: 3.9
+            },
+            {
+                id: "jj-1969",
+                name: "warp equalizer",
+                averagerating: 5.0
+            }
+        ];
+
+        // Populate product dropdown
+        document.addEventListener('DOMContentLoaded', function() {
+            const productSelect = document.getElementById('productName');
+            
+            // Add product options to the select element
+            products.forEach(product => {
+                const option = document.createElement('option');
+                option.value = product.id;
+                option.textContent = product.name;
+                productSelect.appendChild(option);
+            });
+        });
+    </script>
+</body>
+</html>
