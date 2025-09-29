@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Plan - Montevideo Museums</title>
+    <style>
+        /* Color variables for the project */
+        :root {
+            --deep-blue: #1a3a5f;
+            --warm-yellow: #f4b41a;
+            --light-gray: #f5f5f5;
+            --dark-gray: #333;
+            --white: #ffffff;
+        }
+        
+        /* General styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        header {
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 80px;
+            height: 80px;
+            background: var(--warm-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--deep-blue);
+            font-size: 12px;
+            text-align: center;
+            padding: 5px;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        h2 {
+            color: var(--deep-blue);
+            border-bottom: 2px solid var(--warm-yellow);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+            font-family: 'Playfair Display', serif;
+        }
+        
+        h3 {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        section {
+            padding: 2rem;
+        }
+        
+        /* Project information section */
+        .project-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .info-card {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--warm-yellow);
+        }
+        
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .color-box {
+            width: 80px;
+            height: 80px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            font-size: 0.8rem;
+            text-align: center;
+            flex-direction: column;
+        }
+        
+        .typography-sample {
+            margin-top: 1rem;
+        }
+        
+        .font-sample {
+            margin: 0.5rem 0;
+        }
+        
+        .playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .opensans {
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        /* Site structure section */
+        .site-structure {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .pages-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .page-item {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        /* Scenarios section */
+        .scenarios {
+            background: var(--light-gray);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        
+        .scenario-item {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            border-left: 4px solid var(--deep-blue);
+        }
+        
+        /* Mockups section */
+        .mockups {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .mockup-container {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+        
+        .mockup-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .device-tabs {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .device-tab {
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            transition: all 0.3s ease;
+        }
+        
+        .device-tab:hover {
+            background: #f0f0f0;
+        }
+        
+        .device-tab.active {
+            background: var(--deep-blue);
+            color: var(--white);
+        }
+        
+        .mockup-display {
+            background: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        
+        .desktop-mockup {
+            width: 100%;
+            height: 400px;
+            border: 10px solid #333;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .mobile-mockup {
+            width: 300px;
+            height: 600px;
+            border: 10px solid #333;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        
+        .browser-bar {
+            height: 30px;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+        }
+        
+        .browser-dots {
+            display: flex;
+            gap: 5px;
+        }
+        
+        .browser-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+        
+        .dot-red { background: #ff5f57; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #28ca42; }
+        
+        .mockup-content {
+            height: calc(100% - 30px);
+            overflow: auto;
+            padding: 1rem;
+        }
+        
+        .mobile-status-bar {
+            height: 20px;
+            background: var(--deep-blue);
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 10px;
+            font-size: 12px;
+        }
+        
+        .mobile-content {
+            height: calc(100% - 20px);
+            overflow: auto;
+            padding: 1rem;
+        }
+        
+        /* Simulated design elements */
+        .header-mock {
+            background: var(--deep-blue);
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .logo-mock {
+            font-weight: bold;
+            color: var(--warm-yellow);
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .nav-mock {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .nav-item {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .nav-item:hover {
+            color: var(--warm-yellow);
+        }
+        
+        .hero-mock {
+            background: linear-gradient(rgba(26, 58, 95, 0.7), rgba(26, 58, 95, 0.7));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+        }
+        
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .card-mock {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .card-mock:hover {
+            transform: translateY(-5px);
+        }
+        
+        .card-image {
+            height: 120px;
+            background: #ddd;
+        }
+        
+        .card-content {
+            padding: 1rem;
+        }
+        
+        .category-tag {
+            background: var(--warm-yellow);
+            color: var(--deep-blue);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .mobile-nav {
+            display: none;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .desktop-mockup {
+                display: none;
+            }
+            
+            .mobile-nav {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+                margin-bottom: 1rem;
+            }
+            
+            .nav-mock {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .mockup-title {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+            
+            .color-palette {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .logo {
+                position: static;
+                margin: 0 auto 1rem;
+            }
+            
+            header {
+                text-align: center;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .mobile-mockup {
+                display: none;
+            }
+        }
+        
+        footer {
+            background: var(--deep-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        ul {
+            padding-left: 1.5rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        p {
+            font-family: 'Open Sans', sans-serif;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">MONTEVIDEO MUSEUMS</div>
+            <h1>Website Planning Document - Montevideo Museums</h1>
+            <p>Complete website design and structure plan</p>
+        </header>
+        
+        <section>
+            <h2>Site Name</h2>
+            <div class="info-card">
+                <h3>Montevideo Museums</h3>
+                <p><strong>Reason for the name:</strong> The name clearly identifies the purpose of the website - to provide information about museums in Montevideo, Uruguay. It's straightforward, descriptive, and easy for users to remember.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Site Purpose</h2>
+            <div class="info-card">
+                <p>The purpose of Montevideo Museums is to serve as a comprehensive digital guide to the museums of Montevideo, Uruguay. The site will provide:</p>
+                <ul>
+                    <li>Detailed information about each museum (hours, admission, exhibits)</li>
+                    <li>Interactive maps showing museum locations by zone</li>
+                    <li>Current and upcoming exhibitions and events</li>
+                    <li>Educational resources about Montevideo's cultural heritage</li>
+                    <li>Visitor information and planning tools</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section class="scenarios">
+            <h2>Target Audience Scenarios</h2>
+            <div class="scenario-item">
+                <h3>Scenario 1: The Tourist Planner</h3>
+                <p><strong>Question:</strong> "I'm visiting Montevideo for 3 days and want to see the most important museums. Which museums should I prioritize based on my limited time and interests in art and history?"</p>
+                <p><strong>How the site helps:</strong> The website will feature curated itineraries, highlight must-see museums, and provide time estimates for visits based on user interests.</p>
+            </div>
+            
+            <div class="scenario-item">
+                <h3>Scenario 2: The Local Resident</h3>
+                <p><strong>Question:</strong> "I live in Montevideo and want to take my children to educational museums on weekends. Are there any family-friendly exhibitions or activities happening this month?"</p>
+                <p><strong>How the site helps:</strong> The site will filter museums by family-friendly features, highlight current children's programs, and provide calendar views of upcoming events.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Color Schema</h2>
+            <div class="info-card">
+                <p>The color palette was chosen to reflect Montevideo's coastal location and cultural richness:</p>
+                <div class="color-palette">
+                    <div class="color-box" style="background-color: var(--deep-blue);">Deep Blue<br>#1a3a5f<br><em>Headers, navigation, buttons</em></div>
+                    <div class="color-box" style="background-color: var(--warm-yellow); color: var(--deep-blue);">Warm Yellow<br>#f4b41a<br><em>Accents, highlights, calls-to-action</em></div>
+                    <div class="color-box" style="background-color: var(--light-gray); color: var(--dark-gray);">Light Gray<br>#f5f5f5<br><em>Backgrounds, card surfaces</em></div>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Typography</h2>
+            <div class="info-card">
+                <div class="typography-sample">
+                    <div class="font-sample playfair" style="font-size: 1.5rem;">Playfair Display - Used for headings and logos</div>
+                    <div class="font-sample opensans" style="font-size: 1rem;">Open Sans - Used for body text and navigation</div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="site-structure">
+            <h2>Site Structure</h2>
+            <div class="pages-list">
+                <div class="page-item">
+                    <h3>Home Page (index.html)</h3>
+                    <ul>
+                        <li>Hero section with introduction</li>
+                        <li>Featured museums</li>
+                        <li>Preview map</li>
+                        <li>Site statistics</li>
+                    </ul>
+                </div>
+                
+                <div class="page-item">
+                    <h3>Explore by Zone (zones.html)</h3>
+                    <ul>
+                        <li>Interactive map with filters</li>
+                        <li>Zone selector</li>
+                        <li>List of museums by zone</li>
+                        <li>Detailed museum information</li>
+                    </ul>
+                </div>
+                
+                <div class="page-item">
+                    <h3>About Us (about.html)</h3>
+                    <ul>
+                        <li>Mission and vision</li>
+                        <li>Project history</li>
+                        <li>Team members</li>
+                        <li>Contact form</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Wireframes</h2>
+            <div class="mockups">
+                <div class="mockup-container">
+                    <div class="mockup-title">
+                        <h3>Home Page - Desktop View</h3>
+                        <div class="device-tabs">
+                            <div class="device-tab active" onclick="showDesktop()">Desktop</div>
+                            <div class="device-tab" onclick="showMobile()">Mobile</div>
+                        </div>
+                    </div>
+                    
+                    <div class="mockup-display">
+                        <div class="desktop-mockup">
+                            <div class="browser-bar">
+                                <div class="browser-dots">
+                                    <div class="browser-dot dot-red"></div>
+                                    <div class="browser-dot dot-yellow"></div>
+                                    <div class="browser-dot dot-green"></div>
+                                </div>
+                            </div>
+                            <div class="mockup-content">
+                                <div class="header-mock">
+                                    <div class="logo-mock">Montevideo Museums</div>
+                                    <div class="nav-mock">
+                                        <a href="#" class="nav-item">Home</a>
+                                        <a href="#" class="nav-item">Explore by Zone</a>
+                                        <a href="#" class="nav-item">About Us</a>
+                                    </div>
+                                </div>
+                                
+                                <div class="hero-mock">
+                                    <h2>Discover Montevideo's Cultural Treasures</h2>
+                                    <p>Explore the rich museum offerings of Uruguay's capital city</p>
+                                </div>
+                                
+                                <h3>Featured Museums</h3>
+                                <div class="card-grid">
+                                    <div class="card-mock">
+                                        <div class="card-image"></div>
+                                        <div class="card-content">
+                                            <span class="category-tag">Art</span>
+                                            <h4>National Museum of Visual Arts</h4>
+                                            <p>Uruguay's premier art museum featuring national and international works.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card-mock">
+                                        <div class="card-image"></div>
+                                        <div class="card-content">
+                                            <span class="category-tag">Culture</span>
+                                            <h4>Carnival Museum</h4>
+                                            <p>A vibrant tribute to Uruguay's iconic carnival tradition.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card-mock">
+                                        <div class="card-image"></div>
+                                        <div class="card-content">
+                                            <span class="category-tag">History</span>
+                                            <h4>National History Museum</h4>
+                                            <p>Explore Uruguay's rich history through artifacts and documents.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mobile-mockup">
+                            <div class="mobile-status-bar">
+                                <span>9:41</span>
+                                <span>📶 100% 🔋</span>
+                            </div>
+                            <div class="mobile-content">
+                                <div class="header-mock">
+                                    <div class="logo-mock">Montevideo Museums</div>
+                                    <div class="hamburger">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="mobile-nav">
+                                    <a href="#" class="nav-item">Home</a>
+                                    <a href="#" class="nav-item">Explore by Zone</a>
+                                    <a href="#" class="nav-item">About Us</a>
+                                </div>
+                                
+                                <div class="hero-mock">
+                                    <h2>Discover Montevideo's Cultural Treasures</h2>
+                                    <p>Explore the rich museum offerings of Uruguay's capital city</p>
+                                </div>
+                                
+                                <h3>Featured Museums</h3>
+                                <div class="card-grid">
+                                    <div class="card-mock">
+                                        <div class="card-image"></div>
+                                        <div class="card-content">
+                                            <span class="category-tag">Art</span>
+                                            <h4>National Museum of Visual Arts</h4>
+                                            <p>Uruguay's premier art museum featuring national and international works.</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="card-mock">
+                                        <div class="card-image"></div>
+                                        <div class="card-content">
+                                            <span class="category-tag">Culture</span>
+                                            <h4>Carnival Museum</h4>
+                                            <p>A vibrant tribute to Uruguay's iconic carnival tradition.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Website Planning Document - Montevideo Museums</p>
+            <p>Design created for the Montevideo Museums project | Follows W3C validation standards</p>
+        </footer>
+    </div>
+
+    <script>
+        // Functionality to switch between desktop and mobile views
+        function showDesktop() {
+            document.querySelectorAll('.desktop-mockup').forEach(el => el.style.display = 'block');
+            document.querySelectorAll('.mobile-mockup').forEach(el => el.style.display = 'none');
+            updateActiveTab(event);
+        }
+        
+        function showMobile() {
+            document.querySelectorAll('.desktop-mockup').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.mobile-mockup').forEach(el => el.style.display = 'block');
+            updateActiveTab(event);
+        }
+        
+        function updateActiveTab(event) {
+            const tabs = event.target.closest('.device-tabs').querySelectorAll('.device-tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+        
+        // Initialize with desktop view
+        document.addEventListener('DOMContentLoaded', function() {
+            showDesktop();
+        });
+    </script>
+</body>
+</html>
