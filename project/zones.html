@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Explore by Zone — Museums of Montevideo</title>
+  <meta name="description" content="Find museums in Montevideo by zones.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo-circle">DDM</div>
+        <div class="brand-text">
+          <div class="brand-title">Montevideo Museums</div>
+          <div class="brand-sub">Explore by zone</div>
+        </div>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="zones.html" class="current">Explore by Zone</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </header>
+    <main>
+      <h1 class="section-title">Explore Museums by Zone</h1>
+      <div class="filter-row" role="toolbar" aria-label="Zone filters">
+        <button class="btn primary" data-zone="all">All Zones</button>
+        <button class="btn ghost" data-zone="Ciudad Vieja">Ciudad Vieja</button>
+        <button class="btn ghost" data-zone="Centro">Centro</button>
+        <button class="btn ghost" data-zone="Parque Rodó">Parque Rodó</button>
+        <button class="btn ghost" data-zone="Pocitos">Pocitos</button>
+        <button class="btn ghost" data-zone="Carrasco">Carrasco</button>
+      </div>
+      <div id="map" role="application" aria-label="Map of Montevideo"></div>
+      <h2 style="margin-top:12px">All Museums</h2>
+      <div id="all-cards" class="grid" aria-live="polite"></div>
+    </main>
+    <footer></footer>
+  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scripts.js"></script>
+</body>
+</html>
