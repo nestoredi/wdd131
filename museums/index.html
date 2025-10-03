@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Museums of Montevideo — Home</title>
+  <meta name="description" content="Digital guide to the museums of Montevideo.">
+  <meta name="author" content="Nestor Crossa">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo-circle" aria-hidden="true">DDM</div>
+        <div class="brand-text">
+          <div class="brand-title">Montevideo Museums</div>
+          <div class="brand-sub">Discover Montevideo's Culture</div>
+        </div>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="current">Home</a>
+        <a href="zones.html">Explore by Zone</a>
+        <a href="about.html">About Us</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </header>
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <h1 id="hero-title">Discover Montevideo's Cultural Treasures</h1>
+        <p>Explore art, history, science and community museums across the city.</p>
+      </section>
+      <section aria-labelledby="featured-title">
+        <h2 id="featured-title" class="section-title">Featured Museums</h2>
+        <div id="featured-cards" class="grid" aria-live="polite"></div>
+      </section>
+      <section aria-labelledby="open-title" style="margin-top:12px">
+        <h2 id="open-title" class="section-title">Open Now</h2>
+        <div id="open-now" class="contact-card" aria-live="polite"></div>
+      </section>
+    </main>
+    <footer role="contentinfo"></footer>
+  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Museums of Montevideo</title>
+  <meta name="description" content="About the project and contact form.">
+  <meta name="author" content="Nestor Crossa">
+  <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header" role="banner">
+      <div class="brand">
+        <div class="logo-circle">DDM</div>
+        <div class="brand-text">
+          <div class="brand-title">Montevideo Museums</div>
+          <div class="brand-sub">About the project</div>
+        </div>
+      </div>
+      <nav class="nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="zones.html">Explore by Zone</a>
+        <a href="about.html" class="current">About Us</a>
+      </nav>
+      <button class="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </header>
+    <main style="padding:18px">
+      <h1 class="section-title">About This Project</h1>
+      <div class="about-grid">
+        <div>
+          <p><strong>Project Subject:</strong> Museums in Montevideo. This site is a digital guide intended to help residents and visitors discover the city's museums, their hours, and cultural offerings.</p>
+          <h3>Planned Features</h3>
+          <ul>
+            <li>Homepage with introduction and featured museums.</li>
+            <li>Gallery and directory with photos and descriptions.</li>
+            <li>Interactive map and zone filtering (Leaflet + OpenStreetMap).</li>
+            <li>Real-time "Open Now" status based on local time.</li>
+          </ul>
+          <h3>Reason for Selecting the Subject</h3>
+          <p>Montevideo hosts a diverse museum scene that is often under-discovered. The goal is to provide an accessible, mobile-friendly guide promoting cultural engagement.</p>
+        </div>
+        <aside class="contact-card" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact Us</h2>
+          <form id="contact-form" novalidate>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" required>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+            <button class="btn primary" type="submit">Send</button>
+          </form>
+          <h3 style="margin-top:12px">Saved Submissions</h3>
+          <div id="saved-submissions" style="max-height:200px;overflow:auto"></div>
+        </aside>
+      </div>
+    </main>
+    <footer></footer>
+  </div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="scripts/scripts.js"></script>
+</body>
+</html>
